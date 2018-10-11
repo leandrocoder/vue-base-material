@@ -1,0 +1,47 @@
+{
+  "name": "vue-browserify-base",
+  "version": "1.0.0",
+  "description": "base",
+  "main": "src/main.js",
+  "scripts": {
+    "watchify": "watchify -vd -p browserify-hmr -e ./src/main.js -o ./www/js/www.js",
+    "serve": "http-server ./www --cors -o -c 1 -a 0.0.0.0",
+    "dev": "npm-run-all --parallel watchify serve",
+    "build:code": "npm-run-all vueify",
+    "vueify": "cross-env NODE_ENV=production browserify -g envify -p [ vueify/plugins/extract-css -o www/css/www.css ] -e ./src/main.js | uglifyjs -c -m > ./www/js/www.js",
+    "build": "npm-run-all build:code"
+  },
+  "author": "Leandro Carlos",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.3.3",
+    "vue-material": "^1.0.0-beta-10.2",
+    "vue-router": "^2.5.3"
+  },
+  "browserify": {
+    "transform": [
+      "vueify",
+      "babelify"
+    ]
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "browserify-hmr": "^0.3.5",
+    "cross-env": "^5.0.0",
+    "envify": "^4.0.0",
+    "http-server": "^0.10.0",
+    "ncp": "^2.0.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "shelljs": "^0.7.8",
+    "uglify-js": "^3.0.15",
+    "vueify": "^9.4.1",
+    "watchify": "^3.9.0"
+  }
+}

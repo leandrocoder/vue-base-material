@@ -1,0 +1,28 @@
+
+
+@import "../../node_modules/vue-material/dist/vue-material"; // Import the theme engine
+@import "../../node_modules/vue-material/dist/base/theme"; // Import the theme engine
+@import "../../node_modules/vue-material/dist/theme/engine"; // Import the theme engine
+
+@include md-register-theme("default", (
+    primary: #4186f7,
+    accent:  #000000
+));
+@include md-register-theme("blue", (
+    primary: #4186f7,
+    accent:  #000000
+));
+@include md-register-theme("yellow", (
+    primary: #fbbe04,
+    accent:  #000000
+));
+@include md-register-theme("red", (
+    primary: #eb4134,
+    accent:  #000000
+));
+@include md-register-theme("green", (
+    primary: #34aa51,
+    accent:  #000000
+));
+
+@import "../../node_modules/vue-material/dist/theme/all"; // Apply the theme

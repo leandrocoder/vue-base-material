@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'montserratlight';
+    src: url('#{$basepath}fonts/montserrat-light-webfont.woff2') format('woff2'),
+        url('#{$basepath}fonts/montserrat-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratsemibold';
+    src: url('#{$basepath}fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+        url('#{$basepath}fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
